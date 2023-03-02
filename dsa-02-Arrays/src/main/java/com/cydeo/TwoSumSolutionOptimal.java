@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class TwoSumSolutionOptimal {
     public static void main(String[] args) {
-        int arr[] = {2, 3, 5, 8, 9, 10, 11}; // sorted array
+        int arr[] = {2, 3, 5, 8, 9, 10, 11};
         System.out.println(Arrays.toString(twoSumOptimalSolution(arr, 5))); // [1, 0]
         System.out.println(Arrays.toString(twoSumOptimalSolution(arr, 25))); // []
     }
