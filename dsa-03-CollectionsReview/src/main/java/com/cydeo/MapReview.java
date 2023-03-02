@@ -23,7 +23,7 @@ public class MapReview {
 
         str = str.replace(" ", "");
         // create a map : this will cost me space complexity O(n)
-        Map<Character, Integer> map = new LinkedHashMap<>();
+        Map<Character, Integer> map = new TreeMap<>();
         int count;
         // count the frequency of chars
         for (Character ch : str.toCharArray()) {
