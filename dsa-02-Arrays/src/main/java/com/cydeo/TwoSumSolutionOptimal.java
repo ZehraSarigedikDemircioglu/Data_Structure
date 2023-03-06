@@ -26,3 +26,6 @@ public class TwoSumSolutionOptimal {
         return new int[]{};
     }
 }
+/*
+no duplicate, not sorted
+ */
