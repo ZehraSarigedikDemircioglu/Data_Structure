@@ -30,6 +30,7 @@ public class MySinglyLinkedList {
     }
 
     public int getKthItemFromLast(int k) {
+
         // create two pointers
         Node ptr1 = head;
         Node ptr2 = head;
@@ -48,6 +49,7 @@ public class MySinglyLinkedList {
     }
 
     public void removeKthItemFromLast(int k) {
+
         // create three pointers
         Node ptr1 = head;
         Node ptr2 = head;
