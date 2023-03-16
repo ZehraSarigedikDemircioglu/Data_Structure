@@ -130,12 +130,19 @@ public class MySinglyLinkedList {
     }
 
     int indexOf(int id) {
-        if (isEmpty()) return -1;
+
+        if (isEmpty()){
+            return -1;
+        }
+
         int pos = 0;
         // iterate through the list
         Node current = head;// set my current with the starting element;
+
         while (current != null) {
-            if (current.id == id) return pos;
+            if (current.id == id){
+                return pos;
+            }
             pos++;
             current = current.next;
         }
@@ -156,6 +163,7 @@ public class MySinglyLinkedList {
     }
 
     public void removeKthFromLast2(int k) {
+
         Node ptr1 = head;
         Node ptr2 = head;
         for (int i = 0; i < k - 1; i++) {
