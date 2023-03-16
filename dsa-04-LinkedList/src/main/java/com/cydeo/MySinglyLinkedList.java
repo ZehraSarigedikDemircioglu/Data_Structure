@@ -11,14 +11,19 @@ public class MySinglyLinkedList {
     }
 
     void addFirst(int data) {
+
         // create a new node object from data
         Node node = new Node(data);
+
         // case 1: list empty
         if (isEmpty()) {
             head = tail = node;
         } else {// case 2 : list is not empty
+//            tail.next = node;
+//            tail = node;
+//            size++;
             node.next = head;
-            head = node;
+            head = node; // this becomes O(1) since it jumps from head to tail
         }
         //increase size
         size++;
@@ -92,38 +97,36 @@ public class MySinglyLinkedList {
     }
 
     void deleteById(int id) {
+
         // check if empty
-        if (isEmpty()) System.out.println("List is empty!!!");
+        if (isEmpty()){
+            System.out.println("List is empty!!!");
+        }
         // assign prev and current with the head
 
         Node prev = head;
         Node current = head;
+
         while (current != null) {
-            if (current.id == id) {// there is a match
+            if (current.id == id) { // there is a match
                 //case 1: head
-                if (current == head) {
+                if(current == head) { // case 1 : head
                     head = current.next;
                     current.next = null;
-                }
-                // case 2 : tail
-                else if (current == tail) {
+                } else if(current == tail) { // case 2 : tail
                     tail = prev;
-                    prev.next = null;//Ex -Tail will be eligible for Garbage Collection
-                }
-                // case 3 : middle
-                else {
+                    prev.next = null; // ex -tail will be eligible for Garbage Collection
+                } else { // case 3 : middle
                     prev.next = current.next;
-                    current.next = null;// Current will be eligible for Garbage Collection
+                    current.next = null; // current will be eligible for Garbage Collection
                 }
-                // after deletion
-                size--;
+                size--; // after deletion
             }
             // move forward on the elements of the list
             prev = current;
             current = current.next;
 
         }
-
     }
 
     int indexOf(int id) {
@@ -140,16 +143,17 @@ public class MySinglyLinkedList {
     }
 
     void printNodes() {
+
         Node current = head;
         while (current != null) {
-            if (current.next == null) System.out.println(current.id + "=> null");
-            else {
+            if (current.next == null){
+                System.out.println(current.id + "=> null");
+            } else {
                 System.out.print(current.id + "=> ");
             }
             current = current.next;
         }
     }
-
 
     public void removeKthFromLast2(int k) {
         Node ptr1 = head;
