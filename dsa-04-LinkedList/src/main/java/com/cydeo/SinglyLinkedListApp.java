@@ -16,20 +16,21 @@ public class SinglyLinkedListApp {
         mylist1.printNodes();
         System.out.println("index of 3: " + mylist1.indexOf(3)); // index of 3: 2
 
+        MySinglyLinkedList mylist2 = new MySinglyLinkedList();
+        mylist1.add(1);
+        mylist1.add(3);
+        mylist1.add(6);
+        mylist1.add(7);
+        mylist2.add(2);
+        mylist2.add(4);
+        mylist2.add(5);
+        mylist1.printNodes(); // 1=> 2=> 3=> 4=> 5=> 6=> 8=> 1=> 3=> 6=> 7=> null
+        mylist2.printNodes(); // 2=> 4=> 5=> null
+        Node newHead = MergeTwoLinkedList.mergeLinkedLists(mylist1.head, mylist2.head);
 
-//        MySinglyLinkedList mylist2 = new MySinglyLinkedList();
-//        mylist1.add(1);
-//        mylist1.add(3);
-//        mylist1.add(6);
-//        mylist1.add(7);
-//        mylist2.add(2);
-//        mylist2.add(4);
-//        mylist2.add(5);
-//        Node newHead = MergeTwoLinkedList.mergeLinkedLists(mylist1.head, mylist2.head);
-//
-//        while (newHead != null) {
-//            System.out.println(newHead.id);
-//            newHead = newHead.next;
-//        }
+        while (newHead != null) {
+            System.out.println(newHead.id);
+            newHead = newHead.next;
+        }
     }
 }
