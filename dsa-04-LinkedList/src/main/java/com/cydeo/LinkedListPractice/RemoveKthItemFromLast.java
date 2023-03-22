@@ -1,4 +1,4 @@
-package com.cydeo.LinkedList;
+package com.cydeo.LinkedListPractice;
 
 public class RemoveKthItemFromLast {
 
@@ -19,7 +19,6 @@ public class RemoveKthItemFromLast {
         for (int i = 0; i < k - 1; i++) {
             ptr2 = ptr2.next;
         }
-
         while (ptr2.next != null) {
             prev = ptr1;
             ptr1 = ptr1.next;

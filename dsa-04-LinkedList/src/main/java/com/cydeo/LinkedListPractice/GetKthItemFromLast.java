@@ -1,4 +1,4 @@
-package com.cydeo.LinkedList;
+package com.cydeo.LinkedListPractice;
 
 public class GetKthItemFromLast {
 
@@ -26,7 +26,6 @@ public class GetKthItemFromLast {
 
         return ptr1.id;
     }
-
     void printNodes() {
 
         MyNode current = head;

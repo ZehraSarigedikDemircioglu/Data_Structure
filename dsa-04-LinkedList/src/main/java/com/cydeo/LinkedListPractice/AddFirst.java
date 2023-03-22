@@ -1,4 +1,4 @@
-package com.cydeo.LinkedList;
+package com.cydeo.LinkedListPractice;
 
 public class AddFirst {
 
@@ -22,7 +22,6 @@ public class AddFirst {
         }
         size++;
     }
-
     void printNodes() {
 
         MyNode current = head;

@@ -1,6 +1,4 @@
-package com.cydeo.LinkedList;
-
-import com.cydeo.Node;
+package com.cydeo.LinkedListPractice;
 
 public class IndexOf {
 
@@ -58,7 +56,6 @@ public class IndexOf {
             size++;
         }
     }
-
     public static void main(String[] args) {
 
         IndexOf list = new IndexOf();
