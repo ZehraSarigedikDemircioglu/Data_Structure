@@ -190,7 +190,5 @@ public class MySinglyLinkedList {
         ptr1.next = ptr1.next.next;
         ptr1 = ptr1.next;
         ptr1 = null;
-
-
     }
 }
