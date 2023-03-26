@@ -7,17 +7,15 @@ public class UserLinkedList {
     UserNode tail;
     int size;
 
-    public UserLinkedList() {
-        this.size = 0;
-    }
+//    public UserLinkedList() {
+//        this.size = 0;
+//    }
 
     boolean isEmpty() {
         return head == null;
     }
 
-    void insertLast(UserNode userNode) {
-
-        UserNode node = new UserNode(userNode.name, userNode.lastName);
+    void insertLast(UserNode node) {
 
         if (isEmpty()) { // if the list is empty
             head = tail = node;
@@ -26,25 +24,22 @@ public class UserLinkedList {
             tail = node;
         }
         size++;
-
     }
 
     void printNames() {
 
         if (isEmpty()) {
             System.out.println("List is empty");
-            return;
         }
 
         UserNode current = head;
-        System.out.println();
         while (current != null) {
-            System.out.println(current.name + "=> null");
-            current = current.next;
-
-            if (current == null) {
-                System.out.print("null");
+            if (current.next == null) {
+                System.out.println(current.name + "=> null");
+            } else {
+                System.out.print(current.name + "=> ");
             }
+            current = current.next;
         }
     }
 
@@ -52,7 +47,6 @@ public class UserLinkedList {
 
         if (isEmpty()) {
             System.out.println("List is empty");
-            return;
         }
 
         UserNode prev = head;
@@ -67,7 +61,7 @@ public class UserLinkedList {
                     }
                     head = current.next;
                     current.next = null; // break reference from current
-                }else if (current == tail) { // case 2 : tail
+                } else if (current == tail) { // case 2 : tail
                     tail = prev;
                     prev.next = null; // ex -tail will be eligible for Garbage Collection
                 } else { // case 3 : middle
