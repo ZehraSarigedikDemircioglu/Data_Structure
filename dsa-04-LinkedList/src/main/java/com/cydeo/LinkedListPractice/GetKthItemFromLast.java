@@ -63,6 +63,8 @@ public class GetKthItemFromLast {
 
         list.printNodes(); // 0=> 1=> 2=> 3=> 4=> 5=> 6=> 7=> 8=> 9=> null
         System.out.println(list.getKthItemFromLast(2)); // 8
-        list.printNodes(); // 0=> 1=> 2=> 3=> 4=> 5=> 6=> 7=> 9=> null
+        list.add(10);
+        list.printNodes(); // 0=> 1=> 2=> 3=> 4=> 5=> 6=> 7=> 8=> 9=> 10=> null
+        System.out.println(list.getKthItemFromLast(2)); // 9
     }
 }
