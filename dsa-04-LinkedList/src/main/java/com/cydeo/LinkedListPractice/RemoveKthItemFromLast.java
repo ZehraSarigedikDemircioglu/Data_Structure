@@ -120,22 +120,30 @@ public class RemoveKthItemFromLast {
         list1.printNodes(); // 9=> 8=> 7=> 6=> 5=> 4=> 3=> 2=> 1=> 0=> null
         list2.printNodes(); // 0=> 1=> 2=> 3=> 4=> 5=> 6=> 7=> 8=> 9=> null
 
-        list1.removeKthItemFromLast(3); // 9=> 8=> 7=> 6=> 5=> 4=> 3=> 1=> 0=> null
-        list2.removeKthItemFromLast(3); // 0=> 1=> 2=> 3=> 4=> 5=> 6=> 8=> 9=> null
+        list1.removeKthItemFromLast(3);
+        list1.printNodes(); // 9=> 8=> 7=> 6=> 5=> 4=> 3=> 1=> 0=> null
 
-        list1.printNodes();
-        list2.printNodes();
+        list2.removeKthItemFromLast(3);
+        list2.printNodes(); // 0=> 1=> 2=> 3=> 4=> 5=> 6=> 8=> 9=> null
 
-        list1.removeKthFromLast2(3); // 9=> 8=> 7=> 6=> 5=> 4=> 1=> 0=> null
-        list2.removeKthFromLast2(3); // 0=> 1=> 2=> 3=> 4=> 5=> 8=> 9=> null
+        list1.removeKthFromLast2(3);
+        list1.printNodes(); // 9=> 8=> 7=> 6=> 5=> 4=> 1=> 0=> null
 
-        list1.printNodes();
-        list2.printNodes();
+        list2.removeKthFromLast2(3);
+        list2.printNodes(); // 0=> 1=> 2=> 3=> 4=> 5=> 8=> 9=> null
 
-        list1.removeKthFromLast2(6); // 9=> 8=> 6=> 5=> 4=> 1=> 0=> null
-        list2.removeKthFromLast2(6); // 0=> 1=> 3=> 4=> 5=> 8=> 9=> null
+        list1.removeKthFromLast2(6);
+        list1.printNodes(); // 9=> 8=> 6=> 5=> 4=> 1=> 0=> null
 
-        list1.printNodes();
-        list2.printNodes();
+        list2.removeKthFromLast2(6);
+        list2.printNodes(); // 0=> 1=> 3=> 4=> 5=> 8=> 9=> null
+
+        list1.add(100);
+        list1.printNodes(); // 9=> 8=> 6=> 5=> 4=> 1=> 0=> 100 => null
+        list1.removeKthItemFromLast(1);
+        list1.printNodes(); // 9=> 8=> 6=> 5=> 4=> 1=> 0=> null
+
+        list2.addFirst(100);
+        list2.printNodes(); // 100 => 0=> 1=> 3=> 4=> 5=> 8=> 9=> null
     }
 }
