@@ -66,5 +66,9 @@ public class IndexOf {
 
         list.printNodes(); // 0=> 1=> 2=> 3=> 4=> 5=> 6=> 7=> 8=> 9=> null
         System.out.println(list.indexOf(3)); // 3
+        list.add(10);
+        list.printNodes(); // 0=> 1=> 2=> 3=> 4=> 5=> 6=> 7=> 8=> 9=> 10=> null
+        System.out.println(list.indexOf(10)); // 10
+        System.out.println(list.indexOf(100)); // -1
     }
 }
