@@ -12,19 +12,25 @@ public class RemoveKthItemFromLast {
 
     public void removeKthItemFromLast(int k) {
 
+        // create three pointers
         MyNode ptr1 = head;
         MyNode ptr2 = head;
         MyNode prev = null;
 
+        // move ptr2 k-1 times
         for (int i = 0; i < k - 1; i++) {
             ptr2 = ptr2.next;
         }
+
+        // move both pointers until ptr2 hits the last element
         while (ptr2.next != null) {
             prev = ptr1;
             ptr1 = ptr1.next;
             ptr2 = ptr2.next;
         }
 
+        // ptr1 is on the kth element from the last
+        // do delete operation
         if (ptr1 == head) {
             head = ptr1.next;
             ptr1.next = null;
@@ -47,9 +53,9 @@ public class RemoveKthItemFromLast {
 
             ptr2 = ptr2.next;
 
-            if (ptr2 == null) System.out.println("Less than k elements");
-
-            else if (ptr2.next == null) {
+            if (ptr2 == null){
+                System.out.println("Less than k elements");
+            }else if (ptr2.next == null) {
                 head = ptr1.next;
                 ptr1.next = null;
                 return;
