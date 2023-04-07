@@ -6,6 +6,10 @@ public class ExpressionBalanceCheck {
 
     public static void main(String[] args) {
 
+        System.out.println(balanceCheck("(A*C) + ({V-M})")); // true
+        System.out.println(balanceCheck("(A*C) + ({V-M}))")); // false
+        System.out.println(balanceCheck("(A*C) + (({V-M}))")); // true
+
     }
 
     public static boolean balanceCheck(String expr) {
