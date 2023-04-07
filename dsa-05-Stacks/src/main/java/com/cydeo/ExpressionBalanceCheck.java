@@ -1,7 +1,5 @@
 package com.cydeo;
 
-import com.cydeo.Stacks.MyStack;
-
 public class ExpressionBalanceCheck {
 
     public static void main(String[] args) {
