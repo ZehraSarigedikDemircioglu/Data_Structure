@@ -13,17 +13,17 @@ public class GetKthItemFromLast {
 
         MyNode ptr1 = head;
         MyNode ptr2 = head;
-        // move ptr2 k-1 times
 
+        // move ptr2 k-1 times
         for (int i = 0; i < k - 1; i++) {
             ptr2 = ptr2.next;
         }
-
+        // move both pointers until ptr2 hits the last element
         while (ptr2.next != null) {
             ptr1 = ptr1.next;
             ptr2 = ptr2.next;
         }
-
+        // ptr1 is on the kth element from the last
         return ptr1.id;
     }
     void printNodes() {
