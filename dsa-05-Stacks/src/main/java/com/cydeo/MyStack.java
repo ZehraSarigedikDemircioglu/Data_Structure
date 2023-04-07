@@ -1,5 +1,7 @@
 package com.cydeo;
 
+import java.util.NoSuchElementException;
+
 public class MyStack<T> {
 
     public SNode<T> bottom;
@@ -12,7 +14,7 @@ public class MyStack<T> {
 
     public void push(T item){
 
-        SNode<T> node = new SNode<>((SNode) item);
+        SNode<T> node = new SNode<>(item);
 
         if(isEmpty()){
             bottom = top = node;
@@ -23,5 +25,31 @@ public class MyStack<T> {
         size++;
     }
 
-    //public T peek()
+    public T peek(){
+        return (T) top.value;
+    }
+
+    public T pop() {
+
+        SNode peekNode;
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+
+            // stack has one element
+            if (top == bottom) {
+                peekNode = top;
+                top = bottom = null;
+            } else { // more than one element
+                peekNode = top;
+                SNode prev = bottom;
+                while (prev.next != top) {
+                    prev = prev.next;
+                }
+                prev.next = null;
+                top = prev;
+            }
+            size--;
+            return (T) peekNode.value;
+        }
 }
