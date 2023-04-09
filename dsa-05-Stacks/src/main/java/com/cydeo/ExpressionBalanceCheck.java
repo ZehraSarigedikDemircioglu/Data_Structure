@@ -20,7 +20,7 @@ public class ExpressionBalanceCheck {
             Character ch = expr.charAt(i);
 
             // filter non-player chars
-            if (ch != '(' || ch != '[' || ch != '{' || ch != '}' || ch != ')' || ch != ']'){
+            if (ch != '(' && ch != '[' && ch != '{' && ch != '}' && ch != ')' && ch != ']'){
                 continue;
             }
 
