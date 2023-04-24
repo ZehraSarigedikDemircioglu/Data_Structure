@@ -6,7 +6,9 @@ public class Solution {
 
         // create a dummy head Node;
         ListNode tempHead = new ListNode();
+
         ListNode prev = tempHead;
+
         while (curr1 != null && curr2 != null) {
             if (curr1.val <= curr2.val) {
                 prev.next = curr1;
