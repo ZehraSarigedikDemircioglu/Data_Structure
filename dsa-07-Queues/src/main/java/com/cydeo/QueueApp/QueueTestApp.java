@@ -15,5 +15,11 @@ public class QueueTestApp {
         System.out.println("First remove from queue: " + myQueue.dequeue()); // 1
         System.out.println("Front is: " + myQueue.peek()); // 2
 
+        MyQueue<Integer> myQueue2 = new MyQueue<>();
+        for (int i = 0; i < 10; i++) {
+            myQueue2.enqueue(i);
+        }
+        myQueue2.printQueue(); // 0=> 1=> 2=> 3=> 4=> 5=> 6=> 7=> 8=> 9=> null
+        myQueue2.reverseFirstKElementQueue(myQueue2, 3).printQueue(); // 2=> 1=> 0=> 3=> 4=> 5=> 6=> 7=> 8=> 9=> null
     }
 }
