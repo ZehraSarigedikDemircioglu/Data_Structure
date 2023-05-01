@@ -11,6 +11,9 @@ public class ReverseFirstKElementsQueueProblem {
         }
         queue.printQueue(); // 0=> 1=> 2=> 3=> 4=> 5=> null
         reverseFirstK(queue, 3).printQueue(); // 2=> 1=> 0=> 3=> 4=> 5=> null
+        reverseFirstK(queue, 4).printQueue(); // 3=> 0=> 1=> 2=> 4=> 5=> null
+        reverseFirstK(queue, 2).printQueue(); // 0=> 3=> 1=> 2=> 4=> 5=> null
+        reverseFirstK(queue, 5).printQueue(); // 4=> 2=> 1=> 3=> 0=> 5=> null
     }
 
     static MyQueue<Integer> reverseFirstK(MyQueue<Integer> queue, int k) {
@@ -25,6 +28,7 @@ public class ReverseFirstKElementsQueueProblem {
         while (!stack.isEmpty()) {
             queue.enqueue(stack.pop());
         }
+        // dequeue and enqueue size of queue -k times
         for (int i = 0; i < queue.size - k; i++) {
             queue.enqueue(queue.dequeue());
         }
