@@ -13,10 +13,10 @@ public class MyTree {
             root = tNode;
             return;
         }
+        TNode current = root;
         while (true){
-            TNode current = root;
             if(value <= current.value){
-                if(tNode.leftChild == null) {
+                if(current.leftChild == null) {
                     // if left is null insert here
                     current.leftChild = tNode;
                     break;
@@ -24,7 +24,7 @@ public class MyTree {
                 //if leftChild is not null branch into left subtree
                     current = current.leftChild;
             }else{ // value > current
-                if(tNode.rightChild == null) {
+                if(current.rightChild == null) {
                     // if right is null insert here
                     current.rightChild = tNode;
                     break;
