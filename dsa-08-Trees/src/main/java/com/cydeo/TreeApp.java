@@ -10,5 +10,7 @@ public class TreeApp {
             tree.insert(numbers[i]);
         }
         VisualizeTree.printTree(tree.root, null, false);
+
+        tree.preOrderTraversal(tree.root); // 10, 6, 4, 5, 8, 9, 20, 17, 42, 29, 47
     }
 }
