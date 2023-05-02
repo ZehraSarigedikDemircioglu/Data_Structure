@@ -35,8 +35,8 @@ public class VisualizeTree {
 
         printTree(root.leftChild, trunk, false);
     }
-    public static void showTrunks(Trunk p)
-    {
+    public static void showTrunks(Trunk p){
+
         if (p == null) {
             return;
         }
