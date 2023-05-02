@@ -2,7 +2,7 @@ package com.cydeo;
 
 public class VisualizeTree {
 
-    public  static void printTree( TNode root, Trunk prev, boolean isLeft){
+    public  static void printTree(TNode root, Trunk prev, boolean isLeft){
 
         if (root == null) {
             return;
