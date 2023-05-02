@@ -34,7 +34,7 @@ public class MyTree {
             }
         }
     }
-    // Root - Left- Right
+    // Root - Left - Right
     void preOrderTraversal(TNode root){
         if(root == null) {
             return;
@@ -43,6 +43,15 @@ public class MyTree {
             preOrderTraversal(root.leftChild); // visit left subtree
             preOrderTraversal(root.rightChild); // visit right subtree
         }
+    // Left - Root - Right
+    void inOrderTraversal(TNode root){
+        if(root == null) {
+            return;
+        }
+        inOrderTraversal(root.leftChild); // visit left subtree
+        System.out.print(root.value + ", "); // visit root
+        inOrderTraversal(root.rightChild); // visit right subtree
+    }
 
 
 }
