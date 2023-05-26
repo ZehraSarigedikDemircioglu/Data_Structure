@@ -31,7 +31,7 @@ public class MyHeap {
         while (index > 0 && items[index] > items[parentIndex(index)]) {
             swap(index, parentIndex(index));
             // assign the next index with the parent index
-            index = parentIndex(index);
+            index = parentIndex(index); // like current = current.next
         }
     }
 
@@ -40,8 +40,7 @@ public class MyHeap {
             throw new NoSuchElementException();
         } else {
             int result = items[0];
-            items[0] = items[size - 1];
-            size--;
+            items[0] = items[--size];
             bubbleDown();
             return result;
         }
@@ -57,10 +56,26 @@ public class MyHeap {
         }
     }
 
-    public void printHeap() {
-        for (int i = 0; i < size; i++) {
-            System.out.println(items[i] + ", ");
+    public boolean isValidParent(int index) {
+        if (!hasLeftChild(index)) {
+            return true;
+        } else {
+            boolean isValid = items[index] > items[leftChildIndex(index)];
+            if (hasRightChild(index)) {
+                isValid = items[index] >= items[rightChildIndex(index)];
+            }
+            return isValid;
         }
+    }
+
+    public void swap(int first, int second) {
+        int temp = items[first];
+        items[first] = items[second];
+        items[second] = temp;
+    }
+
+    public int parentIndex(int index) {
+        return (index - 1) / 2;
     }
 
     public int leftChildIndex(int index) {
@@ -69,10 +84,6 @@ public class MyHeap {
 
     public int rightChildIndex(int index) {
         return index * 2 + 2;
-    }
-
-    public int parentIndex(int index) {
-        return (index - 1) / 2;
     }
 
     public boolean hasLeftChild(int index) {
@@ -93,21 +104,10 @@ public class MyHeap {
             return items[leftChildIndex(index)] > items[rightChildIndex(index)] ? leftChildIndex(index) : rightChildIndex(index);
     }
 
-    public void swap(int first, int second) {
-        int temp = items[first];
-        items[first] = items[second];
-        items[second] = temp;
-    }
-
-    public boolean isValidParent(int index) {
-        if (!hasLeftChild(index)) {
-            return true;
-        } else {
-            boolean isValid = items[index] > items[leftChildIndex(index)];
-            if (hasRightChild(index)) {
-                isValid = items[index] >= items[rightChildIndex(index)];
-            }
-            return isValid;
+    public void printHeap() {
+        for (int i = 0; i < size; i++) {
+            System.out.print(items[i] + ", ");
         }
+        System.out.println();
     }
 }
