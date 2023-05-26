@@ -43,6 +43,17 @@ public class MyHeap {
             items[0] = items[size - 1];
             size--;
             bubbleDown();
+            return result;
+        }
+    }
+
+    public void bubbleDown() {
+        int index = 0;
+        int largerChildIndex;
+        while (index <= size && isValidParent(index)) {
+            largerChildIndex = largerChildIndex(index);
+            swap(index, largerChildIndex);
+            index = largerChildIndex;
         }
     }
 
