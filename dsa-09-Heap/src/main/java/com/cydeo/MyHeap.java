@@ -1,5 +1,7 @@
 package com.cydeo;
 
+import java.util.NoSuchElementException;
+
 public class MyHeap {
 
     int[] items;
@@ -8,6 +10,15 @@ public class MyHeap {
     public MyHeap(int capacity) {
         this.items = new int[capacity];
         this.size = 0;
+    }
+
+    public void insert(int value) {
+        if (size == items.length) {
+            throw new NoSuchElementException();
+        } else {
+            items[size++]=value;
+            bubbleUp();
+        }
     }
 
     public int leftChildIndex(int index) {
@@ -44,5 +55,17 @@ public class MyHeap {
         int temp = items[first];
         items[first] = items[second];
         items[second] = temp;
+    }
+
+    public boolean isValidParent(int index) {
+        if (!hasLeftChild(index)) {
+            return true;
+        } else {
+            boolean isValid = items[index] > items[leftChildIndex(index)];
+            if (hasRightChild(index)) {
+                isValid = items[index] >= items[rightChildIndex(index)];
+            }
+            return isValid;
+        }
     }
 }
