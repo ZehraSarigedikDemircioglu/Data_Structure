@@ -57,6 +57,12 @@ public class MyHeap {
         }
     }
 
+    public void printHeap() {
+        for (int i = 0; i < size; i++) {
+            System.out.println(items[i] + ", ");
+        }
+    }
+
     public int leftChildIndex(int index) {
         return index * 2 + 1;
     }
