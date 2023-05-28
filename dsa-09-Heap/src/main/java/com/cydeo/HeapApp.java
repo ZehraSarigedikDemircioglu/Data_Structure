@@ -18,6 +18,10 @@ public class HeapApp {
 
         int[] numbers = {1, 2, 5, 6, 8, 21, 0};
         MyHeap heap1 = new MyHeap(numbers);
-        heap1.printHeap();
+        heap1.printHeap(); // 21, 8, 5, 6, 2, 1, 0,
+
+        int[] numbers2 = {5, 8, 6, 8, 8, 2, 1, 5, 7, 6, 7, 4};
+        MyHeap heap2 = new MyHeap(numbers2);
+        heap2.printHeap(); // 8, 8, 6, 8, 7, 4, 1, 5, 7, 6, 5, 2,
     }
 }
