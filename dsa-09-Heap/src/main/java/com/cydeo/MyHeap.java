@@ -12,9 +12,11 @@ public class MyHeap {
         this.size = 0;
     }
 
-    public MyHeap(int[] items) {
-        this.items = items;
-        this.size = items.length;
+    public MyHeap(int[] arr) {
+        this.items = new int[arr.length];
+        this.size = arr.length;
+        this.items = arr;
+        buildHeap();
     }
 
     public int peek() {
@@ -74,7 +76,7 @@ public class MyHeap {
         } else {
             boolean isValid = items[index] > items[leftChildIndex(index)];
             if (hasRightChild(index)) {
-                isValid= (items[index]>=items[leftChildIndex(index)]&&items[index]>=items[rightChildIndex(index)]);
+                isValid = (items[index] >= items[leftChildIndex(index)] && items[index] >= items[rightChildIndex(index)]);
             }
             return isValid;
         }
@@ -90,20 +92,20 @@ public class MyHeap {
         return (index - 1) / 2;
     }
 
+    public boolean hasLeftChild(int index) {
+        return leftChildIndex(index) < size;
+    }
+
+    public boolean hasRightChild(int index) {
+        return rightChildIndex(index) < size;
+    }
+
     public int leftChildIndex(int index) {
         return index * 2 + 1;
     }
 
     public int rightChildIndex(int index) {
         return index * 2 + 2;
-    }
-
-    public boolean hasLeftChild(int index) {
-        return leftChildIndex(index) <= size;
-    }
-
-    public boolean hasRightChild(int index) {
-        return rightChildIndex(index) <= size;
     }
 
     public int largerChildIndex(int index) {
@@ -121,5 +123,29 @@ public class MyHeap {
             System.out.print(items[i] + ", ");
         }
         System.out.println();
+    }
+
+    // Heapify new array
+
+    public void buildHeap() {
+
+        // Start from (n/2 -1) to index 0; (To exclude leaves)
+
+        int startIndex = (size / 2) - 1;
+        // go up level by level
+        for (int i = startIndex; i >= 0; i--) {
+            heapify(i);
+        }
+    }
+
+    public void heapify(int index) {
+
+        if (!isValidParent(index)) {
+            int largestChildIndex = largerChildIndex(index);
+            swap(index, largestChildIndex);
+            // recursively go down on the affected subtree
+            // continue until i'th element
+            heapify(largestChildIndex);
+        }
     }
 }
