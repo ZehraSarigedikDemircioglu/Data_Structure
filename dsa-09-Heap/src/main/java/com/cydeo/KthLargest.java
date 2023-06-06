@@ -20,6 +20,7 @@ public class KthLargest {
         for (int i = 0; i < k - 1; i++) {
             heap.remove();
         }
+        // return root
         return heap.peek();
     }
 }
