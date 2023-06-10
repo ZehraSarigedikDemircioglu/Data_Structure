@@ -27,5 +27,6 @@ public class JumpSearch {
             if (array[i] == data) return i;
         }
         return -1;
+
     }
 }
