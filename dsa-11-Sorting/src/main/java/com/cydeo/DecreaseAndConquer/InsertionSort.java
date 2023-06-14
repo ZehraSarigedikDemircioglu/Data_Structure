@@ -10,7 +10,6 @@ public class InsertionSort {
         int[] array = {4, 2, 9, -2, 5};
         System.out.println(Arrays.toString(insertionSort(array)));
     }
-
     public static int[] insertionSort(int[] array) { // the best = O(n) if already sorted, no shift, the worst = O(n^2)
 
         for (int i = 1; i < array.length; i++) {
