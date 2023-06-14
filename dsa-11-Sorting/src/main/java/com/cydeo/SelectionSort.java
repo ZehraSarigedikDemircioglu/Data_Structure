@@ -1,4 +1,4 @@
-package com.cydeo.BruteForce;
+package com.cydeo;
 
 import java.util.Arrays;
 
