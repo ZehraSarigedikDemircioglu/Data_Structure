@@ -1,4 +1,4 @@
-package com.cydeo.DivideAndConquer;
+package com.cydeo;
 
 import java.util.Arrays;
 
