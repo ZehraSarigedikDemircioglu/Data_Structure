@@ -12,6 +12,7 @@ public class QuickSort {
     }
 
     public static void quickSort(int[] array, int indexStart, int indexEnd) { // the best = O(nlogn), the worst = O(n^2)
+        //  it’s very easy to avoid quicksort’s worst-case run time of O(n^2) almost entirely by using an appropriate choice of the pivot – such as picking it at random (this is an excellent strategy).
 
         if (indexStart >= indexEnd) return; // termination
         int boundary = partition(array, indexStart, indexEnd);
