@@ -13,6 +13,7 @@ public class MergeSort {
     }
     public static void mergeSort(int[] array) { // the best = O(nlogn), the worst = O(nlogn)
         // since dividing O(logn), and merging O(n). But requires additional space for divided Arrays.
+        // MergeSort requires extra memory linear to number of elements to be sorted.
 
         if (array.length < 2) return; // if you have an array with one element STOP
 
