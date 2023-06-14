@@ -1,4 +1,4 @@
-package com.cydeo.DecreaseAndConquer;
+package com.cydeo;
 
 import java.util.Arrays;
 
